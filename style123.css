@@ -1,0 +1,204 @@
+/* Базовые настройки */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body { 
+    font-family: 'Segoe UI', sans-serif; 
+    background-color: #f4f4f4; 
+    padding-top: 80px;
+    /* Анимация плавного появления страницы при загрузке */
+    animation: fadeIn 0.8s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Шапка */
+header {
+    background: #2d4057;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    z-index: 1000;
+}
+
+.logo { 
+    height: 50px; 
+    margin-right: 20px;
+    transition: transform 0.3s ease; /* Плавность для лого */
+}
+
+/* Анимация логотипа при наведении */
+.logo:hover {
+    transform: rotate(10deg) scale(1.1);
+}
+
+navbar a { 
+    color: white !important; 
+    text-decoration: none; 
+    margin-left: 20px; 
+    font-size: 18px; 
+    transition: color 0.3s; /* Плавность смены цвета */
+}
+
+navbar a:hover {
+    color: #ffd700 !important; /* Желтый цвет при наведении */
+}
+
+/* Главная страница (фон) */
+#main-banner {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                url('https://dolinasad.by/upload/medialibrary/288/2880ae565f9e63213dd72ee4bae31b14.jpg');
+    background-size: cover;
+    background-position: center;
+    height: calc(100vh - 80px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+/* Сетка для фото */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Анимация карточек при наведении */
+.card:hover {
+    transform: translateY(-10px); /* Карточка «подпрыгивает» вверх */
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
+
+.card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.card img:hover {
+    transform: scale(1.02); /* Картинка слегка увеличивается */
+}
+/* Устанавливаем банан как фон для всей страницы */
+body {
+    /* Темный фильтр, чтобы текст читался + твоя картинка */
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                url(banana.jpeg);
+    
+    /* Делаем картинку "резиновой" */
+    background-size: cover;         /* Растягивает на весь экран */
+    background-position: center;    /* Центрирует картинку */
+    background-attachment: fixed;   /* Картинка не едет при скролле (эффект параллакса) */
+    background-repeat: no-repeat;
+    
+    /* Остальные настройки */
+    font-family: 'Segoe UI', sans-serif;
+    color: white; /* Делаем текст белым, чтобы он был виден на фоне */
+    padding-top: 80px;
+    min-height: 100vh;
+}
+
+/* Настройки для текста внутри блоков, если фон перекрывает их */
+main {
+    background: rgba(0, 0, 0, 0.4); /* Полупрозрачная подложка для контента */
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 900px;
+    margin: 20px auto;
+}
+header {
+    background: #2d4057;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center; /* Центрирует логотип и меню */
+    align-items: center;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    gap: 20px; /* Расстояние между ссылками */
+}
+
+nav a {
+    color: white !important;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #ffd700 !important; /* Цвет банана при наведении */
+}
+#main-banner {
+    height: 100vh; /* Занимает 100% высоты экрана */
+    display: flex;
+    justify-content: center; /* Центрирует по горизонтали */
+    align-items: center;     /* Центрирует по вертикали */
+    text-align: center;
+    color: white;            /* Белый текст, чтобы он выделялся */
+    
+    /* Добавляем фон: затемнение + картинка */
+    /* ЗАМЕНИ 'banana.jpg' на реальное имя твоего файла */
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+                url('../images/arbuz_1.jpg');
+    
+    background-size: cover;      /* Растягивает картинку, сохраняя пропорции */
+    background-position: center; /* Центрирует картинку */
+    background-repeat: no-repeat;
+}
+
+#main-banner h1 {
+    font-size: 3.5rem; /* Делаем заголовок крупным */
+    margin-bottom: 20px;
+}
+
+#main-banner p {
+    font-size: 1.5rem;
+}
+@media (max-width: 768px) {
+    nav { display: none; } /* Скрываем меню на телефоне */
+    nav.active { display: flex; flex-direction: column; background: #2d4057; }
+}
+.banana-btn {
+    background-color: #ffd700; /* Цвет банана */
+    color: #2d4057;            /* Темный текст */
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 25px;       /* Скругленные края */
+    cursor: pointer;
+    transition: transform 0.2s;
+    margin-top: 20px;
+}
+
+.banana-btn:hover {
+    transform: scale(1.1);     /* Кнопка чуть увеличивается при наведении */
+    background-color: #ffc107;
+}
